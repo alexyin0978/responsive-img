@@ -1,0 +1,15 @@
+/* basic bg style */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  background-color: gray;
+  font-family: sans-serif;
+}
+body {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  background-color: white;
+}

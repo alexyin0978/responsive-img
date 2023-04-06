@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-gray-500">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image | Not RWD Version</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="max-w-[1200px] my-0 mx-auto w-full bg-white">
+    <header class="h-[200px] bg-[url('./assets/header.jpg')] bg-no-repeat bg-center"></header>
+    <main class="bg-white max-w-[1200px]">
+      <section class="p-5">
+        <h1>My website</h1>
+        <ul class="flex flex-col gap-8 mt-8">
+          <li>通常圖片尺寸不要大於 screen pixel 的 2 倍（不然會造成浪費）</li>
+          <li>
+            <div>1. 圖片保持相同的尺寸(320px)，但不同的分辨率</div>
+            <img
+              src="./assets/elva-fairy-320w.jpg"
+              srcset="
+                ./assets/elva-fairy-320w.jpg,
+                ./assets/elva-fairy-480w.jpg     1.5x,
+                ./assets/elva-fairy-640w.jpg     2x,
+                ./assets/elva-fairy-800w.jpg     3x,
+                ./assets/elva-fairy-original.jpg 4x
+              "
+              alt="分辨率切換"
+              class="w-[320px]"
+            />
+          </li>
+          <li>
+            <div>2-1. 使用 img, 不同網頁響應尺寸時, 載入不同尺寸的圖片(不知道為什麼, 讀不到, 囧...)</div>
+            <img
+              class="mx-auto my-0 max-w-full block"
+              srcset="./assets/elva-480w-close-portrait.jpg 480w, ./assets/elva-800w.jpg 800w"
+              sizes="(max-width: 600px) 480px, 800px"
+              src="./assets/elva-800w.jpg"
+              alt="不同網頁尺寸, 不同圖片尺寸"
+            />
+          </li>
+          <li>
+            <div>2-2. 使用 picture, 不同網頁響應尺寸時, 載入不同尺寸的圖片</div>
+            <picture>
+              <source srcset="./assets/elva-480w-close-portrait.jpg" media="(max-width: 799px)" />
+              <source srcset="./assets/elva-800w.jpg" media="(min-width: 800px)" />
+              <img class="mx-auto my-0 max-w-full block" src="./assets/elva-800w.jpg" alt="不同網頁尺寸, 不同圖片尺寸"
+            </picture>
+          </li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>

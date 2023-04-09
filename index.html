@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Image | Not RWD Version</title>
+    <title>RWD Image</title>
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body class="max-w-[1200px] my-0 mx-auto w-full bg-white">
@@ -46,6 +46,33 @@
               <source srcset="./assets/elva-800w.jpg" media="(min-width: 800px)" />
               <img class="mx-auto my-0 max-w-full block" src="./assets/elva-800w.jpg" alt="不同網頁尺寸, 不同圖片尺寸"
             </picture>
+          </li>
+        </ul>
+      </section>
+      <section class="p-5">
+        <h1>其他圖片筆記</h1>
+        <ul>
+          <li>
+            <h2>1. 避免圖片變形 - 只限制 width | height 其中一種</h2>
+            <p class="text-xs">把尺寸限制放在 parent 層</p>
+            <div class="max-w-md mx-auto">
+              <img
+                class="w-full align-middle"
+                src="https://images.unsplash.com/photo-1556656793-08538906a9f8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
+              />
+            </div>
+          </li>
+          <li>
+            <h2>2. 避免圖片變形 - 當成背景圖片</h2>
+            <div class="text-xs">
+              <p>*. 因爲是背景圖片, 必須手動指定高度</p>
+              <p>*. 其他記得加上 bg-position、bg-size、bg-no-repeat</p></p>
+            </div>
+            <div class="max-w-md mx-auto">
+              <div
+                class="h-[200px] md:h-[300px] bg-[url('https://images.unsplash.com/photo-1556656793-08538906a9f8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80')] bg-center bg-contain bg-no-repeat"
+              ></div>
+            </div>
           </li>
         </ul>
       </section>
